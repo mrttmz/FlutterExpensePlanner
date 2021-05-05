@@ -1,6 +1,6 @@
 # ExpensePlannerProject
 
-A new Flutter project.
+This project is made with personal educational purposes. Opinions are not mine, but coded myself by referencing education on udemy : https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps
 
 ## Getting Started
 
