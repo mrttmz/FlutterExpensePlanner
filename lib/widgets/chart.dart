@@ -47,7 +47,9 @@ class Chart extends StatelessWidget {
           return ChartBar(
             data['day'],
             data['amount'],
-            (data['amount'] as double) / totalSpending,
+            totalSpending == 0.0
+                ? 0.0
+                : (data['amount'] as double) / totalSpending,
           );
         }).toList(),
       ),
