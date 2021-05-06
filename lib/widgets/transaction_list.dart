@@ -14,21 +14,39 @@ class TransactionList extends StatelessWidget {
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
-                Text(
-                  'No transactions added yet',
-                  style: Theme.of(context).textTheme.title,
-                ),
                 SizedBox(
                   height: 20,
                 ),
                 Container(
                     height: 200,
-                    child: Image.asset('assets/images/waiting.png',
+                    child: Image.asset('assets/images/nothingToDo.png',
                         fit: BoxFit.cover)),
               ],
             )
           : ListView.builder(
               itemBuilder: (ctx, index) {
+                return Card(
+                  elevation: 3,
+                  margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 30,
+                      child: Padding(
+                        padding: EdgeInsets.all(7),
+                        child: FittedBox(
+                            child: Text('\$${transactions[index].amount}')),
+                      ),
+                    ),
+                    title: Text(
+                      transactions[index].title,
+                      style: Theme.of(context).textTheme.title,
+                    ),
+                    subtitle: Text(
+                        '${DateFormat.yMMMd().format(transactions[index].date)}'),
+                  ),
+                );
+                /* Card design below is an alternative way to use instead of ListTile. */
+                /*
                 return Card(
                   child: Row(
                     children: <Widget>[
@@ -76,6 +94,7 @@ class TransactionList extends StatelessWidget {
                     ],
                   ),
                 );
+                */
               },
               itemCount: transactions.length,
             ),
