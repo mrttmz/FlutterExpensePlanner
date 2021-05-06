@@ -42,7 +42,8 @@ class TransactionList extends StatelessWidget {
                       style: Theme.of(context).textTheme.title,
                     ),
                     subtitle: Text(
-                        '${DateFormat.yMMMd().format(transactions[index].date)}'),
+                      '${DateFormat.yMMMd().format(transactions[index].date)}',
+                    ),
                   ),
                 );
                 /* Card design below is an alternative way to use instead of ListTile. */
